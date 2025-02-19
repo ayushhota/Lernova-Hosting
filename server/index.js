@@ -21,19 +21,27 @@ dotenv.config();
 
 // Connecting to database
 database.connect();
- 
+
 // Middlewares
 app.use(express.json());
 app.use(cookieParser());
-app.use(
-	cors(
-		{
-		// origin: "*",
-		origin: 'https://lernova-edtech-project.vercel.app',
-		credentials: true,
-	}
-)
-);
+// app.use(
+// 	cors(
+// 		{
+// 		// origin: "*",
+// 		origin: 'https://lernova-edtech-project.vercel.app',
+// 		credentials: true,
+// 	}
+// )
+// );
+
+const corsOptions = {
+	origin: 'https://lernova-edtech-project.vercel.app', // Allow specific origin
+	credentials: true, // Allow credentials (cookies, authorization headers, etc.)
+};
+
+app.use(cors(corsOptions));
+
 app.use(
 	fileUpload({
 		useTempFiles: true,
