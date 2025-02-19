@@ -28,6 +28,7 @@ app.use(cookieParser());
 app.use(
 	cors({
 		origin: "*",
+		// origin: 'https://lernova-edtech-project.vercel.app',
 		credentials: true,
 	})
 );
