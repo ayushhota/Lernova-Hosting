@@ -41,6 +41,7 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+app.options('*', cors(corsOptions)); // Enable preflight requests for all routes
 
 app.use(
 	fileUpload({
