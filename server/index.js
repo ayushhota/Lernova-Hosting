@@ -27,11 +27,11 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
 	cors(
-	// 	{
-	// 	// origin: "*",
-	// 	origin: 'https://lernova-edtech.vercel.app/',
-	// 	credentials: true,
-	// }
+		{
+		// origin: "*",
+		origin: 'https://lernova-edtech-project.vercel.app',
+		credentials: true,
+	}
 )
 );
 app.use(
